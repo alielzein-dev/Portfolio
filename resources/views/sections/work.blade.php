@@ -27,21 +27,7 @@
                         @endif
 
                         <div class="featured-text">
-                            <div>
-                                <small>{{ $project['type'] }}</small>
-                                <h3>{{ $project['title'] }}</h3>
-                                <p>{{ $project['text'] }}</p>
-                                @if (! empty($project['tools']))
-                                    <ul class="uses">
-                                        @foreach ($project['tools'] as $tool)
-                                            <li>{{ $tool }}</li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                                @if (! empty($project['url']))
-                                    <a class="visit" href="{{ $project['url'] }}" target="_blank" rel="noopener">Visit the site</a>
-                                @endif
-                            </div>
+                            <x-project-info :project="$project" />
                             @if (! empty($project['highlights']))
                                 <ul class="highlights">
                                     @foreach ($project['highlights'] as $point)
@@ -60,19 +46,7 @@
                                 <x-project-mock :type="$project['mock'] ?? 'site'" />
                             @endif
                         </div>
-                        <div>
-                            <small>{{ $project['type'] }}</small>
-                            <h3>{{ $project['title'] }}</h3>
-                            <p>{{ $project['text'] }}</p>
-                            <ul class="uses">
-                                @foreach ($project['tools'] as $tool)
-                                    <li>{{ $tool }}</li>
-                                @endforeach
-                            </ul>
-                            @if (! empty($project['url']))
-                                <a class="visit" href="{{ $project['url'] }}" target="_blank" rel="noopener">Visit the site</a>
-                            @endif
-                        </div>
+                        <x-project-info :project="$project" />
                     </article>
                 @endif
             @endforeach

@@ -95,6 +95,20 @@ class HomePageTest extends TestCase
             ->assertSee('aria-pressed="true"', false);
     }
 
+    public function test_social_links_left_as_placeholders_are_hidden(): void
+    {
+        config(['portfolio.socials' => [
+            'GitHub' => 'https://github.com/someone',
+            'LinkedIn' => '#',
+            'Instagram' => '',
+        ]]);
+
+        $this->get('/')
+            ->assertSee('href="https://github.com/someone"', false)
+            ->assertDontSeeText('LinkedIn')
+            ->assertDontSeeText('Instagram');
+    }
+
     public function test_page_has_no_contact_form(): void
     {
         $this->get('/')->assertDontSee('<form', false);

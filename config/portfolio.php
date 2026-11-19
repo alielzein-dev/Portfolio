@@ -27,7 +27,7 @@ return [
     'photo' => null,
 
     'socials' => [
-        'GitHub' => '#',
+        'GitHub' => 'https://github.com/alielzein-dev',
         'LinkedIn' => '#',
         'Instagram' => '#',
     ],
@@ -88,7 +88,7 @@ return [
             [
                 'type' => 'Service platform for a solar company',
                 'title' => 'Solartion',
-                'text' => "A workspace for a solar company to run its service side. The team keeps track of customers and their solar systems, turns service requests into work orders, books technicians on a calendar and logs every onsite visit. It works in English, Arabic and French, in dark or light.",
+                'text' => 'A workspace for a solar company to run its service side. The team keeps track of customers and their solar systems, turns service requests into work orders, books technicians on a calendar and logs every onsite visit. It works in English, Arabic and French, in dark or light.',
                 'highlights' => [
                     "A dashboard with today's appointments, open work orders and anything that needs attention",
                     'A schedule you can view by day or by technician, with overdue jobs flagged',

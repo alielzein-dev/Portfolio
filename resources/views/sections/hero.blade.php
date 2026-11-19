@@ -11,7 +11,8 @@
                 <a class="btn btn-line" href="#contact">Contact me</a>
             </div>
             <ul class="socials">
-                @foreach ($p['socials'] as $label => $url)
+                {{-- Links still set to '#' are placeholders, so they stay hidden --}}
+                @foreach (array_filter($p['socials'], fn ($url) => filled($url) && $url !== '#') as $label => $url)
                     <li><a href="{{ $url }}" target="_blank" rel="noopener">{{ $label }}</a></li>
                 @endforeach
             </ul>
